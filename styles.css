@@ -1,40 +1,38 @@
-/* Container settings expected by the test */
+/* Container settings */
 #grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(5, 1fr); /* Or repeat(5, 124px) if the platform specifically requires fixed heights */
+  grid-template-rows: repeat(5, 124px); 
   gap: 10px;
-  height: 100vh; /* Helps stretch the 5 rows out so computed values match */
   padding: 10px;
   box-sizing: border-box;
 }
 
-/* Base styles for all elements */
+/* Base styles for all numbered boxes */
 #grid > div {
-  background-color: green; /* Satisfies rgb(0, 128, 0) check */
+  background-color: green; 
   color: white;
   font-size: 4vw;
-  padding: 10px;
   box-sizing: border-box;
 }
 
-/* 1. The first element should span all 4 columns */
+/* 1. First element spans all 4 columns */
 #grid > div:nth-child(1) {
   grid-column: span 4;
 }
 
-/* 2. The second element should span 4 rows */
+/* 2. Second element spans 4 rows */
 #grid > div:nth-child(2) {
   grid-row: span 4;
 }
 
-/* 3. The fourth and fifth elements should span 2 columns each */
+/* 3. Fourth and fifth elements span 2 columns each */
 #grid > div:nth-child(4),
 #grid > div:nth-child(5) {
   grid-column: span 2;
 }
 
-/* 4. The tenth element should span 3 columns */
+/* 4. Tenth element spans 3 columns */
 #grid > div:nth-child(10) {
   grid-column: span 3;
 }
